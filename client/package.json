@@ -14,7 +14,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "version": "1.0.0",
   "main": "index.js",
-  "homepage": "",
+  "homepage": "https://kavindasandaruwan-00.github.io/Student_Management",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
