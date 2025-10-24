@@ -12,7 +12,7 @@ export default function Subject() {
 
     const fetchSubjects = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/subjects');
+            const res = await axios.get('https://student-management-5yl2.onrender.com/api/subjects');
             setSubjects(res.data);
         } catch (err) {
             console.error(err);
@@ -36,10 +36,10 @@ export default function Subject() {
         e.preventDefault();
         try {
             if (editId) {
-                await axios.put(`http://localhost:8080/api/subjects/${editId}`, formData);
+                await axios.put(`https://student-management-5yl2.onrender.com/api/subjects/${editId}`, formData);
                 setToast({ show: true, message: 'Subject updated successfully', bg: 'success' });
             } else {
-                await axios.post('http://localhost:8080/api/subjects', formData);
+                await axios.post('https://student-management-5yl2.onrender.com/api/subjects', formData);
                 setToast({ show: true, message: 'Subject added successfully', bg: 'success' });
             }
             handleClose();
@@ -52,7 +52,7 @@ export default function Subject() {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to Delete this subject?')) {
             try {
-                await axios.delete(`http://localhost:8080/api/subjects/${id}`);
+                await axios.delete(`https://student-management-5yl2.onrender.com/api/subjects/${id}`);
                 setToast({ show: true, message: 'Subject deleted successfully', bg: 'success' });
                 fetchSubjects();
             } catch (err) {

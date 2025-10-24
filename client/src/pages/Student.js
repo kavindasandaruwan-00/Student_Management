@@ -20,7 +20,7 @@ export default function Student() {
 
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/api/students');
+            const response = await axios.get('https://student-management-5yl2.onrender.com/api/students');
             setStudents(response.data);
         } catch (err) {
             console.error('Error fetching students:', err);
@@ -29,7 +29,7 @@ export default function Student() {
 
     const fetchSubjects = async () => {
         try {
-            const res = await axios.get('http://localhost:8080/api/subjects');
+            const res = await axios.get('https://student-management-5yl2.onrender.com/api/subjects');
             setSubjects(res.data);
         } catch (err) {
             console.error('Error fetching subjects:', err);
@@ -62,10 +62,10 @@ export default function Student() {
         e.preventDefault();
         try {
             if (editId) {
-                await axios.put(`http://localhost:8080/api/students/${editId}`, formData);
+                await axios.put(`https://student-management-5yl2.onrender.com/api/students/${editId}`, formData);
                 showToast('Student Updated Successfully!');
             } else {
-                await axios.post('http://localhost:8080/api/students', formData);
+                await axios.post('https://student-management-5yl2.onrender.com/api/students', formData);
                 showToast('Student Added Successfully!');
             }
             handleClose();
@@ -79,7 +79,7 @@ export default function Student() {
     const handleDelete = async (id) => {
         if (window.confirm('Are you sure you want to delete this student?')) {
             try {
-                await axios.delete(`http://localhost:8080/api/students/${id}`);
+                await axios.delete(`https://student-management-5yl2.onrender.com/api/students/${id}`);
                 fetchStudents();
                 showToast('Student Deleted Successfully!');
             } catch (err) {
